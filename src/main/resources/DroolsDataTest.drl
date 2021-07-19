@@ -1,0 +1,19 @@
+package io.dhmin.drools
+
+import io.dhmin.drools.DroolsData
+
+rule "chenck data1 and update data3"
+    when 
+        droolsData: DroolsData(data1 != null)
+    then
+        droolsData.setData3(droolsData.getData1() + " Add data3");
+        System.out.println(droolsData);
+    end
+
+rule "chenck data2 and update data3"
+    when 
+        droolsData: DroolsData(data2 != null)
+    then
+        droolsData.setData3(droolsData.getData2() + " Add data3");
+        System.out.println(droolsData);
+    end
